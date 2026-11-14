@@ -1,0 +1,13 @@
+120KB，1360多行，4-5小时左右完工。
+https://github.com/listrt/cpp_tools/blob/main/typekind/typekind_pro.cpp
+11月7日，去取快递，快递丢了，进度不得不又推迟一个周（目前已经推迟一个月了）。
+11月7日，我下载了 DeepSeek Harness，当天花费了1258多万 token 去对话。
+我的 typekind.cpp 升级到了 typekind_pro.cpp 了。
+搜了点资料，打算自学 Kotlin和XML，不过门槛高。
+我打算做几个 UI（基于 Android）练练手。
+大概在放寒假前，完成并创建说明文档，完成 rth_out_ultra.cpp 并创建说明文档。
+11月7日，我把游戏卸了，给电脑腾出了大概7GB。
+感觉最近写成长手册像写工作报告一样。
+
+11月8日，星期日
+listrt
