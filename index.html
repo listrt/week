@@ -1,3 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0;url=https://week.rangtt.com/cn">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangtt</title>
 </head>
+<body>
+
+    <script>
+        (function() {
+            // 目标域名
+            const BASE_URL = 'https://week.rangtt.com';
+
+            // 当前路径（小写）
+            const path = (window.location.pathname || '/').toLowerCase();
+
+            // 浏览器语言
+            const userLang = (navigator.language || navigator.userLanguage || 'en-US').toLowerCase();
+
+            // ---- 判断逻辑 ----
+            // 1. 优先看路径中是否有 /cn 或 /en
+            const cnRegex = /(^|\/)cn(\/|$|\?|#)/i;
+            const enRegex = /(^|\/)en(\/|$|\?|#)/i;
+
+            const hasCN = cnRegex.test(path);
+            const hasEN = enRegex.test(path);
+
+            let target;
+
+            if (hasCN) {
+                // 路径明确是 /cn
+                target = BASE_URL + '/cn';
+            } else if (hasEN) {
+                // 路径明确是 /en
+                target = BASE_URL + '/en';
+            } else {
+                // 路径无标识，用浏览器语言判断
+                const isChinese = userLang.startsWith('zh') || userLang.includes('cn');
+                target = isChinese ? BASE_URL + '/cn' : BASE_URL + '/en';
+            }
+
+            // ---- 执行跳转 ----
+            // 如果当前已经是要跳转的目标，就不跳了（避免死循环）
+            const currentFull = window.location.href;
+            // 简单比较：如果当前页面已经包含了目标路径，就不再跳转
+            if (currentFull.startsWith(target)) {
+                console.log('已在目标页面，跳过跳转:', target);
+            } else {
+                console.log('检测到路径:', path, '语言:', userLang, '跳转到:', target);
+                window.location.replace(target);
+            }
+        })();
+    </script>
+</body>
+</html>
